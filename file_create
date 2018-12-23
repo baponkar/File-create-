@@ -1,0 +1,20 @@
+#!/bin/bash
+#Author : Bapon Kar
+#Date: 23/12/2018
+#Description: This program create desire file name with usual texts
+#Modified: 23/12/2018
+
+if [[ $# -ne 1 ]]
+then
+	echo -e "\e[1;31m Usage: filecreate filename[ .. ] \e[0m"
+else
+	touch $1
+
+echo "#!/bin/bash">>$1
+echo  "#Author : Bapon Kar">>$1
+echo "#Create Date : $(echo `date`)">>$1
+echo "#Description : ">>$1 
+echo "#Modified Date :">>$1
+#echo -e "\t\e[32m  file '$1' created in this directory\e[0m"
+vim $1
+fi
